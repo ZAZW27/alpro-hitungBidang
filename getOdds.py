@@ -1,5 +1,8 @@
-N = int(input("Masukkan nomor ganjil yang akan di gunakan: "))
-while N != 0: 
+print('Program Mencetak Bilangan Ganjil N sampai 1')
+
+N = int(input('Masukkan bilangan N : '))
+
+while 1 <= N:
     if N % 2 != 0:
-        print(N)
+        print(N, end=' ')
     N -= 1
