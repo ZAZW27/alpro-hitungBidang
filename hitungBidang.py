@@ -1,6 +1,6 @@
 import math
 print ("Pilih bangun datar.")
-invalid = "\033[31mInvalid permission\033[37m"
+invalid = "\033[31mInvalid input\033[37m"
 while True:
     print ("1. Persegi panjang")
     print ("2. Persegi")
@@ -13,6 +13,8 @@ while True:
         print ("2. Keliling")
         jenis_hitungan = int(input("Pilih luas atau keliling...")) # menentukan mana yang akan dicari
         
+        if jenis_hitungan != 1 and jenis_hitungan != 2: print(invalid ) ; continue
+
         panjang = int(input("Masukkan panjang...")) # cari panjang
         lebar = int(input("Masukkan lebar...")) # cari lebar
         if jenis_hitungan == 1 : # mencari luas
@@ -21,13 +23,13 @@ while True:
         elif jenis_hitungan == 2 : # mencari keliling
             keliling = 2 * (panjang + lebar)
             print (f"Maka keliling persegi panjang adalah {keliling}")
-        else :
-            print(invalid)
 
     elif pilih_bidang == 2:
         print ("1. Luas")
         print ("2. Keliling")
         jenis_hitungan = int(input("pilih luas atau keliling...")) 
+        
+        if jenis_hitungan != 1 and jenis_hitungan != 2: print(invalid ) ; continue
         
         sisi = int(input("masukkan panjang sisi...")) # cari sisi awal 
         if jenis_hitungan == 1 :
@@ -36,8 +38,6 @@ while True:
         elif jenis_hitungan == 2 :
             keliling = 4 * sisi
             print (f"maka keliling persegi adalah {keliling}")
-        else :
-            print (invalid)
 
     elif pilih_bidang == 3 :
         print ("pilih jenis segitiga")
@@ -52,15 +52,16 @@ while True:
             print ("2. keliling")
             jenis_hitungan = int(input("pilih luas atau keliling...")) # menentukan mana yang akan dicari
             
+            if jenis_hitungan != 1 and jenis_hitungan != 2: print(invalid ) ; continue
+            
             sisi = int(input("masukkan panjang sisi...")) # memberi sisi
             if jenis_hitungan == 1 : # mencari luas
                 luas = math.sqrt(3) / 4 * (sisi)**2
                 print (f"maka luas segitiga sama sisi adalah {luas}")
+                
             elif jenis_hitungan == 2 : # mencari keliling
                 keliling = 3 * (sisi)
                 print (f"maka keliling segitiga sama sisi adalah {keliling}")
-            else :
-                print (invalid)
 
         elif jenis_segitiga == 2 : # pytagoras
             print ("sisi apa yang ingin kamu cari ?")
@@ -71,7 +72,7 @@ while True:
             if jenis_hitungan == 1 :
                 miring = int(input("masukkan panjang sisi miring..."))
                 depan_samping = int(input("masukkan panjang sisi depan atau bawah yang diketahui..."))
-                bawah_atas = math.sqrt ((miring)**2 - (depan_samping)**2)
+                bawah_atas = math.sqrt((miring)**2 - (depan_samping)**2)
                 print (f"maka panjang sisi yang kamu cari adalah {bawah_atas}")
 
             elif jenis_hitungan == 2 :
@@ -87,6 +88,8 @@ while True:
             print ("1. luas")
             print ("2. keliling")
             jenis_hitungan = int(input("pilih luas atau keliling..."))
+            
+            if jenis_hitungan != 1 and jenis_hitungan != 2: print(invalid ) ; continue
             
             alas = int(input("masukkan panjang alas...")) # memberi alas awal
             if jenis_hitungan == 1 : # luas
@@ -105,6 +108,8 @@ while True:
             print ("3. luas")
             jenis_hitungan = int(input("pilih luas atau keliling..."))
             
+            if jenis_hitungan != 1 and jenis_hitungan != 2 and jenis_hitungan != 3: print(invalid ) ; continue
+            
             a = int(input("masukkan panjang sisi a..."))
             b = int(input("masukkan panjang sisi b..."))
             c = int(input("masukkan panjang sisi c..."))
@@ -121,13 +126,10 @@ while True:
                 setengah_keliling = int(input("masukkan setengah keliling segitiga sembarang..."))
                 luas = math.sqrt(setengah_keliling * (setengah_keliling - a) * (setengah_keliling - b) * (setengah_keliling - c))
                 print (f"maka luas segitiga sembarang adalah {luas}")
-                
-            else :
-                print (invalid)
-        else :  
+        else :
             print (invalid)
     elif pilih_bidang == 4 :
-        print ("Sampai jumpa lagi !!!")
+        print ("Sampai jumpa lagi!!!")
         break
     else:
         print (invalid)    
