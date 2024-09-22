@@ -1,16 +1,15 @@
 print ("Program Mencetak Perhitungan Faktorial")
 n = int(input("Masukkan angka yang diinginkan untuk menghitung faktorial = "))
-Faktorial = 1
+hasil_faktor = 1
+penjumlahan_format = " "
 angka = n
-hasil = " "
-i = 1
 
-while i <= n:
-    Faktorial *= i
-    hasil += str(angka)
-    if angka > 1:
-        hasil += " x "
-    i += 1
-    angka -= 1
+while True:
+    hasil_faktor *= n
+    penjumlahan_format += str(n)
+    if n > 1:
+        penjumlahan_format += " x "
+    else: break
+    n -= 1
 
-print (f"Faktorial dari {n} adalah {Faktorial} dengan format {n}! = {hasil}")
+print (f"Faktorial dari {angka} adalah {hasil_faktor} dengan format {angka}! = {penjumlahan_format}\n")
